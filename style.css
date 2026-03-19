@@ -84,3 +84,24 @@ hr {
 .btn-enviar:hover {
     background-color: #0056b3;
 }
+.lista-container {
+    margin-top: 20px;
+    max-width: 600px; /* Um pouco mais larga que o form */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #333;
+}
