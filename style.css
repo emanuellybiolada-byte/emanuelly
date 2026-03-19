@@ -8,9 +8,10 @@
 body {
     background-color: #f4f7f6;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Alinha o form e a lista um abaixo do outro */
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Permite que a página cresça se houver muitos itens */
+    padding: 2rem; /* Espaçamento nas bordas em telas menores */
 }
 
 .container {
@@ -20,11 +21,12 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
+    margin-bottom: 20px; /* Espaço entre o form e a lista */
 }
 
-h2 {
+h2, h3 {
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 p {
@@ -52,56 +54,3 @@ hr {
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.input-group input:focus {
-    border-color: #007bff;
-}
-
-.row {
-    display: flex;
-    gap: 15px;
-}
-
-.btn-enviar {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn-enviar:hover {
-    background-color: #0056b3;
-}
-.lista-container {
-    margin-top: 20px;
-    max-width: 600px; /* Um pouco mais larga que o form */
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-th, td {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
-
-th {
-    background-color: #f8f9fa;
-    color: #333;
-}
