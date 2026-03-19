@@ -37,5 +37,46 @@
             <button type="submit" class="btn-enviar">Finalizar Cadastro</button>
         </form>
     </div>
+    <div class="container lista-container">
+    ### Clientes Cadastrados
+    <table id="tabela-clientes">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+</div>
 </body>
+    <script>
+    const form = document.getElementById('form-cadastro');
+    const tabela = document.querySelector('#tabela-clientes tbody');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede a página de recarregar
+
+        // Pega os valores dos inputs
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+
+        // Cria uma nova linha (tr) na tabela
+        const novaLinha = document.createElement('tr');
+
+        novaLinha.innerHTML = `
+            <td>${nome}</td>
+            <td>${email}</td>
+            <td><button onclick="this.parentElement.parentElement.remove()" style="color:red; border:none; background:none; cursor:pointer;">Excluir</button></td>
+        `;
+
+        // Adiciona a linha na tabela
+        tabela.appendChild(novaLinha);
+
+        // Limpa o formulário
+        form.reset();
+    });
+</script>
 </html>
