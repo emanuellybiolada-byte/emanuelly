@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Sistema de Gestão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-header">
+            <h1>Área de Acesso</h1>
+            <p>Insira suas credenciais para continuar</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" placeholder="admin" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="1234" required>
+            </div>
+
+            <button type="submit" class="btn-login">Entrar no Sistema</button>
+        </form>
+    </div>
+
+    <script>
+        // Lógica simples para redirecionamento
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede a página de recarregar
+            
+            const user = document.getElementById('usuario').value;
+            const pass = document.getElementById('senha').value;
+
+            // Simulação de validação (em um sistema real, isso é feito no servidor)
+            if(user === 'admin' && pass === '1234') {
+                alert('Login realizado com sucesso!');
+                window.location.href = 'cadastro_cliente.html'; // Nome do seu arquivo de cadastro
+            } else {
+                alert('Usuário ou senha incorretos. Tente admin / 1234');
+            }
+        });
+    </script>
+</body>
+</html>
